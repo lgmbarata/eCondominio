@@ -1,0 +1,32 @@
+<ion-header>
+
+	<ion-navbar>
+		<button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>Quadro de Avisos</ion-title>
+	</ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+	<ion-card *ngFor="let message of validMessages | async">
+		<ion-item>
+			<ion-avatar item-left>
+				<ion-icon name="contact"></ion-icon>
+			</ion-avatar>
+			<h2>{{ message.from }}</h2>
+			<p>{{ message.dateAdded | date}}</p>
+		</ion-item>
+
+		<ion-card-content>
+			<p>{{ message.text }}</p>
+		</ion-card-content>
+	</ion-card>
+
+	<button (click)="newMessage()" primary fab fab-bottom fab-right fab-fixed>
+		<ion-icon name="add"></ion-icon>
+	</button>
+</ion-content>

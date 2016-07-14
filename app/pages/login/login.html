@@ -1,0 +1,24 @@
+<ion-header>
+
+</ion-header>
+
+
+<ion-content padding>
+	<form #loginForm='ngForm'>
+		<ion-item>
+			<ion-label floating>Email</ion-label>
+			<ion-input type="email" ngControl="email"></ion-input>
+		</ion-item>
+
+		<ion-item>
+			<ion-label floating>Senha</ion-label>
+			<ion-input type="password" ngControl="password"></ion-input>
+		</ion-item>
+
+		<div padding>
+			<button block outline (click)="login(loginForm.value)">Entrar</button>
+			<button block (click)="facebookLogin()">Entrar com o Facebook</button>
+			<button block outline (click)="registerUser(loginForm.value)">Criar uma nova conta</button>
+		</div>
+	</form>
+</ion-content>

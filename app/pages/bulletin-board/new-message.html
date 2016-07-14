@@ -1,0 +1,13 @@
+<ion-content>
+	<ion-list>
+		<ion-item>	
+			<ion-label floating>Digite uma nova mensagem:</ion-label>
+			<ion-input type="text" [(ngModel)]="messageText"></ion-input>
+		</ion-item>
+
+	</ion-list>
+
+	<div>
+		<button clear item-right (click)="sendMessage()">Fixar</button>
+	</div>
+</ion-content>
