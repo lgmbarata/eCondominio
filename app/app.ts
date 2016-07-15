@@ -36,7 +36,7 @@ class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
     { title: 'Quadro de Avisos', component: BulletinBoardPage },
-    { title: 'Moradores', component: PeoplePage}
+    { title: 'Moradores', component: PeoplePage }
     ];
 
   }

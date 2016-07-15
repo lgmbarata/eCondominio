@@ -16,6 +16,15 @@ export class LoginPage {
 		
 	}
 
+	ngOnInit() {
+		this.auth.subscribe((data) => {
+			console.log("in auth subscribe", data)
+			if (data) {
+				this.nav.setRoot(BulletinBoardPage);
+			} 
+		});
+	}
+
 	private registerUser(credentials) {
 		this.showLoading();
 
@@ -60,7 +69,14 @@ export class LoginPage {
 	}
 
 	private login(credentials) {
-		this.showLoading();
+		this.showLoading()
+
+		this.auth.login(credentials).then((authData) => {
+			this.loading.dismiss();
+			this.nav.setRoot(BulletinBoardPage);
+		}).catch((error) => {
+			this.showError(error);
+		});
 	}
 
 	showLoading() {
