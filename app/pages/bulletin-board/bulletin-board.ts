@@ -1,34 +1,55 @@
+import { Popover, Modal, ViewController, NavController, NavParams } from 'ionic-angular';
 import { Component, OnInit, Input } from '@angular/core';
-import { Popover, ViewController, NavController, NavParams } from 'ionic-angular';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { Observable } from 'rxjs/Observable';
+import { AuthPage } from '../auth/home/home';
 
 // Main bulletin board controller.
 @Component({
 	templateUrl: 'build/pages/bulletin-board/bulletin-board.html',
 })
 export class BulletinBoardPage implements OnInit {
-	messages: FirebaseListObservable<any>;
-	validMessages: FirebaseListObservable<any>;
+	allMessages: FirebaseListObservable<any[]>;
+	condoMessages: FirebaseListObservable<any[]>;
+	authInfo: any;
 
 	constructor(private nav: NavController, private af: AngularFire) {
 
 	}
 
 	ngOnInit() {
-		this.af.auth.login({ email: 'luiz.barata@gmail.com', password: '123456' });
-		this.messages = this.af.database.list('/messages');
-		this.validMessages = this.af.database.list('/messages', {
+		this.allMessages = this.af.database.list('/messages');
+		this.condoMessages = this.af.database.list('/messages', {
 			query: {
 				orderByChild: '-dateAdded'
 			}
 		});
 
+		this.af.auth.subscribe(data => {
+			if (data) {
+				this.authInfo = data;
+			} else {
+				this.authInfo = null;
+				this.showLoginModal();
+			}
+		});
+	}
+
+	logout() {
+		if (this.authInfo) {
+			this.af.auth.logout();
+			return;
+		}
+	}
+
+	showLoginModal() {
+		let loginPage = Modal.create(AuthPage);
+		this.nav.present(loginPage);
 	}
 
 	newMessage() {
 		let popover = Popover.create(NewMessagePage, {
-			messages: this.messages
+			messages: this.allMessages
 		});
 
 		this.nav.present(popover);

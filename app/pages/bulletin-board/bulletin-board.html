@@ -4,7 +4,7 @@
 		<button menuToggle>
 			<ion-icon name="menu"></ion-icon>
 		</button>
-		<ion-title>Quadro de Avisos</ion-title>
+		<ion-title>Avisos</ion-title>
 	</ion-navbar>
 
 </ion-header>
@@ -12,7 +12,7 @@
 
 <ion-content padding>
 
-	<ion-card *ngFor="let message of validMessages | async">
+	<ion-card *ngFor="let message of condoMessages | async">
 		<ion-item>
 			<ion-avatar item-left>
 				<ion-icon name="contact"></ion-icon>
