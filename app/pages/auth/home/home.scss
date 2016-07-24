@@ -1,63 +1,26 @@
-.auth-home {
-  background-image: url(../../../img/auth-background.jpg);
-  background-size: 100%;
-  background-position-y: 50%;
+.login-container {
+  background-image: url("../images/Building.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+  z-index: -1;
+}
 
-  .logo {
-    height: 50%;
-    width: 100%;
-    .logo-icon {
-      text-align: center;
-      font-size: 40px;
-      padding-top: 30%;
-      color: white;
-    }
-  }
+.login-container div {
+  position: absolute;
+}
 
-  .facebook-btn {
-    background-color: #3b5998;
-    margin: auto;
-    width: 95%;
-    margin-bottom: 5px;
-  }
+.bottom {
+  z-index: 0;
+  opacity: 0.36;
+  background: #000000;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
 
-  .google-btn {
-    background-color: #d34836;
-    margin: auto;
-    width: 95%;
-    margin-bottom: 5px;
-  }
-
-  .sign-up-btn {
-    margin-top: 5%;
-    margin-left: 2.5%;
-    width: 46%;
-  }
-
-  .log-in-btn {
-    margin-top: 5%;
-    margin-left: 2%;
-    width: 46%;
-  }
-
-  .error {
-    margin-top: 20px;
-    width: 100%;
-    text-align: center;
-    background-color: rgb(217, 74, 87);
-    p {
-      color: white;
-      font-weight: bold;
-    }
-  }
-
-  .terms-of-use-txt {
-    text-align: center;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 10px;
-    font-size: 10px;
-    color: white;
-  }
+.top {
+  z-index: 1;
 }

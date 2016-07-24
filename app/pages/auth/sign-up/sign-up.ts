@@ -9,27 +9,29 @@ import { AuthProvider } from "../../../providers/auth/auth";
 })
 export class SignUpPage {
   error: any;
-  constructor(private navCtrl: NavController, private auth: AuthProvider) {}
+  constructor(private nav: NavController, private auth: AuthProvider) {
+    
+  }
 
   ngOnInit() {
 
   }
 
   openLoginPage() {
-    this.navCtrl.push(LoginEmailPage);
+    this.nav.push(LoginEmailPage);
   }
 
   registerUser(credentials) {
     let loading = Loading.create({
-      content: "Please wait..."
+      content: "Aguarde..."
     });
-    this.navCtrl.present(loading);
+    this.nav.present(loading);
 
     this.auth.registerUser(credentials).subscribe(registerData => {
       this.auth.loginWithEmail(registerData).subscribe(loginData => {
         setTimeout(() => {
           loading.dismiss();
-          this.navCtrl.setRoot(BulletinBoardPage);
+          this.nav.setRoot(BulletinBoardPage);
         }, 1000);
       }, loginError => {
         setTimeout(() => {

@@ -13,27 +13,29 @@ import { BulletinBoardPage } from '../../bulletin-board/bulletin-board';
 export class AuthPage {
   error: any;
 
-  constructor(private navCtrl: NavController, private auth: AuthProvider) {}
+  constructor(private nav: NavController, private auth: AuthProvider) {
+    
+  }
 
   ngOnInit() {
 
   }
 
   openSignUpPage() {
-    this.navCtrl.push(SignUpPage);
+    this.nav.push(SignUpPage);
   }
 
   openLoginPage() {
-    this.navCtrl.push(LoginEmailPage);
+    this.nav.push(LoginEmailPage);
   }
 
   openTermsOfService() {
-    this.navCtrl.push(TermsOfServicePage);
+    this.nav.push(TermsOfServicePage);
   }
 
   registerUserWithFacebook() {
     this.auth.loginWithFacebook().subscribe(data => {
-      this.navCtrl.setRoot(BulletinBoardPage);
+      this.nav.setRoot(BulletinBoardPage);
     }, err => {
       this.error = err;
     });
@@ -41,7 +43,7 @@ export class AuthPage {
 
   registerUserWithGoogle() {
     this.auth.loginWithGoogle().subscribe(data => {
-      this.navCtrl.setRoot(BulletinBoardPage);
+      this.nav.setRoot(BulletinBoardPage);
     }, err => {
       this.error = err;
     });

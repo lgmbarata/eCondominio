@@ -11,7 +11,6 @@ export class AuthProvider {
       this.af.auth.subscribe(authData => {
         if (authData) {
           this.af.database.object("/users/" + authData.uid).subscribe(userData => {
-            console.log(userData);
             observer.next(userData);
           });
         } else {

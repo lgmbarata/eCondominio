@@ -1,0 +1,61 @@
+{
+  "condos" : {
+    "one" : {
+      "address" : "Rua Carangola, 94",
+      "city" : "Belo Horizonte",
+      "cnpj" : "undefined",
+      "employees" : {
+        "emp1" : true
+      },
+      "managers" : {
+        "1dg1pB7enmNfYqcTtR7rftL6hBF2" : true
+      },
+      "name" : "Edifício Roma",
+      "neighborhood" : "Santo Antônio",
+      "state" : "MG",
+      "tenants" : {
+        "1dg1pB7enmNfYqcTtR7rftL6hBF2" : true
+      },
+      "zip" : 30330240
+    }
+  },
+  "messages" : {
+    "-KN0IUcWUOz0OwK2fmzy" : {
+      "dateAdded" : 1468900702842,
+      "dateUpdated" : 1468900702842,
+      "from" : "Luiz Barata",
+      "text" : "blah blah blah"
+    },
+    "-KN0IkzIMQgPlVJjGQao" : {
+      "dateAdded" : 1468900773929,
+      "dateUpdated" : 1468900773929,
+      "from" : "Luiz Barata",
+      "text" : "bleh"
+    },
+    "one" : {
+      "dateAdded" : 1467169200000,
+      "dateUpdated" : 1467939223827,
+      "from" : "Luiz Barata",
+      "text" : "Primeira mensagem do app"
+    },
+    "three" : {
+      "dateAdded" : 1467169200000,
+      "dateUpdated" : 1467945285321,
+      "from" : "Lara Barata",
+      "text" : "Gente!"
+    }
+  },
+  "users" : {
+    "1dg1pB7enmNfYqcTtR7rftL6hBF2" : {
+      "condos" : {
+        "one" : true
+      },
+      "displayName" : "Luiz Barata",
+      "managerOf" : {
+        "one" : true
+      },
+      "photoUrl" : "none",
+      "type" : 0
+    }
+  }
+}

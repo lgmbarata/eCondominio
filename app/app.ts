@@ -22,7 +22,7 @@ import { PeoplePage } from './pages/people/people';
 })
 class MyApp {
   @ViewChild(Nav) nav: Nav;   
-  rootPage: any = BulletinBoardPage; 
+  rootPage: any; 
   pages: Array<{title: string, component: any}>;
   isAppInitialized: boolean;
 
@@ -44,6 +44,7 @@ class MyApp {
 
       this.auth.getUserData().subscribe(data => {
         if (!this.isAppInitialized) {
+          console.log(data);
           this.nav.setRoot(BulletinBoardPage);
           this.isAppInitialized = true;
         }

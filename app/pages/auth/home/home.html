@@ -1,28 +1,21 @@
-<ion-content class="auth-home">
-  <div class="logo">
-    <div class="logo-icon">
-      LOGO
+<ion-content scroll="false" padding class="login-container">
+  <div class="bottom"></div>
+  <div>
+    eCondomínio
+
+    <button primary block class="top" (click)="openLoginPage()">Entrar</button>
+    <button danger block (click)="registerUserWithFacebook()">
+      Entrar com o Facebook  
+    </button>
+
+    <div>ou <b (click)="openSignUpPage()">clique aqui</b> se preferir criar uma conta.</div>
+
+    <div padding *ngIf="error">
+      <p>{{ error }}</p>
     </div>
-  </div>
 
-  <button block class="facebook-btn" (click)="registerUserWithFacebook()">
-    <ion-icon name="logo-facebook"></ion-icon>
-    Log In with Facebook
-  </button>
-  <button block class="google-btn" (click)="registerUserWithGoogle()">
-    <ion-icon name="logo-google" ></ion-icon>
-    Log In with Google
-  </button>
-
-  <button light outline class="sign-up-btn" (click)="openSignUpPage()">Sign Up</button>
-  <button light outline class="log-in-btn" (click)="openLoginPage()">Log In</button>
-
-  <div padding class="error" *ngIf="error">
-    <p>{{error}}</p>
-  </div>
-
-  <div class="terms-of-use-txt">
-    By Signing up you agree to the
-    <b (click)="openTermsOfService()">Terms of Service</b>
+    <div>
+      Ao criar uma conta você aceita os <b (click)="openTermsOfService()">Termos do Serviço</b>
+    </div>
   </div>
 </ion-content>
